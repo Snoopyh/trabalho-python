@@ -1,0 +1,11 @@
+# Sistema de Gerenciamento de Biblioteca Pessoal
+# Dependências do projeto
+
+# Python 3.7+ é necessário para type hints e funcionalidades modernas
+# Não há dependências externas - usa apenas bibliotecas padrão do Python
+
+# Bibliotecas padrão utilizadas:
+# - datetime: Para manipulação de datas
+# - json: Para persistência de dados
+# - typing: Para type hints
+# - unittest: Para testes
