@@ -1,5 +1,4 @@
-### Dados da Equipe (Preencher no documento_requisitos.md)
-```
+### Dados da Equipe
 ## Informações da Equipe
 - **Integrante 1:** DAYANE DO NASCIMENTO PAULINO - 2326944- **Papel:** Documentador/Arquiteto
 - **Integrante 2:** ISMAEL GUSTAVO DA SILVA - 2326204 - **Papel:** Desenvolvedor Backend
@@ -9,8 +8,7 @@
 
 ```
 
-### Capa do Documento (Adicionar no início do documento_requisitos.md)
-```
+### Capa do Documento
 UNIVERSIDADE UNIFOR
 CURSO: ANALISE E DESENVOLVIMENTO DE SISTEMAS
 DISCIPLINA: N704-Programação funcional

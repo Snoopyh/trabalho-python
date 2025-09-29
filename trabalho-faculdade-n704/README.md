@@ -7,7 +7,7 @@
 - **Integrante 4:** STAYNER RODRIGUES DE LIMA - 2326190 - **Papel:** Tester
 - **Integrante 5:** MATHEUS FERREIRA SILVA ROCHA - 2326202 - **Papel:** Desenvolvedor Interface
 
-### Capa do Documento (Adicionar no início do documento_requisitos.md)
+### Capa do Documento 
 ```
 UNIVERSIDADE UNIFOR
 CURSO: ANALISE E DESENVOLVIMENTO DE SISTEMAS
@@ -50,14 +50,14 @@ Este projeto implementa um sistema de gerenciamento de biblioteca pessoal utiliz
 return list(filter(lambda livro: livro['categoria'] == categoria, self.livros))
 ```
 
-### 2. List Comprehension (0.4 pts)
+### 2. List Comprehension
 **Localização**: `biblioteca.py` - método `obter_titulos_livros()`
 ```python
 # Extrai títulos usando list comprehension
 return [livro['titulo'] for livro in livros]
 ```
 
-### 3. Closure (0.4 pts)
+### 3. Closure 
 **Localização**: `biblioteca.py` - método `criar_contador_emprestimos()`
 ```python
 def criar_contador_emprestimos(self) -> Callable[[], int]:
@@ -71,7 +71,7 @@ def criar_contador_emprestimos(self) -> Callable[[], int]:
     return incrementar_contador  # Retorna função que mantém estado
 ```
 
-### 4. Função de Alta Ordem (0.4 pts)
+### 4. Função de Alta Ordem 
 **Localização**: `biblioteca.py` - método `aplicar_desconto_livros()`
 ```python
 def aplicar_desconto_livros(self, livros: List[Dict[str, Any]], 

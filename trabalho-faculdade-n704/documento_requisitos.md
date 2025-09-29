@@ -99,7 +99,7 @@
 **Arquivo:** `biblioteca.py` - linha 67
 ```python
 def filtrar_livros_por_categoria(self, categoria: str) -> List[Dict[str, Any]]:
-    # CONCEITO FUNCIONAL: Função Lambda
+    
     return list(filter(lambda livro: livro['categoria'] == categoria, self.livros))
 ```
 
@@ -107,7 +107,7 @@ def filtrar_livros_por_categoria(self, categoria: str) -> List[Dict[str, Any]]:
 **Arquivo:** `biblioteca.py` - linha 78
 ```python
 def obter_titulos_livros(self, livros: List[Dict[str, Any]]) -> List[str]:
-    # CONCEITO FUNCIONAL: List Comprehension
+   
     return [livro['titulo'] for livro in livros]
 ```
 
@@ -115,7 +115,7 @@ def obter_titulos_livros(self, livros: List[Dict[str, Any]]) -> List[str]:
 **Arquivo:** `biblioteca.py` - linha 87
 ```python
 def criar_contador_emprestimos(self) -> Callable[[], int]:
-    # CONCEITO FUNCIONAL: Closure
+   
     contador = 0
     
     def incrementar_contador():
@@ -131,7 +131,7 @@ def criar_contador_emprestimos(self) -> Callable[[], int]:
 ```python
 def aplicar_desconto_livros(self, livros: List[Dict[str, Any]], 
                            funcao_desconto: Callable[[Dict[str, Any]], Dict[str, Any]]) -> List[Dict[str, Any]]:
-    # CONCEITO FUNCIONAL: Função de Alta Ordem
+    
     return list(map(funcao_desconto, livros))
 ```
 
