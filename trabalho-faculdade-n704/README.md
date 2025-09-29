@@ -83,7 +83,7 @@ def aplicar_desconto_livros(self, livros: List[Dict[str, Any]],
 ## 📁 Estrutura do Projeto
 
 ```
-sbobis/
+trabalho-faculdade-n704/
 ├── biblioteca.py          # Módulo principal com lógica de negócio
 ├── main.py               # Interface de usuário
 ├── test_biblioteca.py    # Casos de teste abrangentes
