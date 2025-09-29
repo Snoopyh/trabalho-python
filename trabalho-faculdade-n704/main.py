@@ -1,7 +1,5 @@
-"""
-Interface principal do Sistema de Gerenciamento de Biblioteca Pessoal
-Demonstra uso de conceitos de programação funcional
-"""
+"Interface principal do Sistema de Gerenciamento de Biblioteca Pessoal"
+"Demonstra uso de conceitos de programação funcional"
 
 from biblioteca import Biblioteca, criar_funcao_desconto, processar_livros_funcional, calcular_estatisticas_livros
 from datetime import datetime
