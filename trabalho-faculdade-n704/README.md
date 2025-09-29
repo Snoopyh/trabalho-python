@@ -9,7 +9,7 @@
 
 ### Capa do Documento 
 ```
-UNIVERSIDADE UNIFOR
+Fundação Edson Queiroz - Universidade de Fortaleza
 CURSO: ANALISE E DESENVOLVIMENTO DE SISTEMAS
 DISCIPLINA: N704-Programação funcional
 PROFESSOR: Bruno Lopes Alcantara
@@ -53,7 +53,7 @@ return list(filter(lambda livro: livro['categoria'] == categoria, self.livros))
 ### 2. List Comprehension
 **Localização**: `biblioteca.py` - método `obter_titulos_livros()`
 ```python
-# Extrai títulos usando list comprehension
+
 return [livro['titulo'] for livro in livros]
 ```
 
@@ -61,14 +61,14 @@ return [livro['titulo'] for livro in livros]
 **Localização**: `biblioteca.py` - método `criar_contador_emprestimos()`
 ```python
 def criar_contador_emprestimos(self) -> Callable[[], int]:
-    contador = 0  # Variável do escopo externo
+    contador = 0  
     
-    def incrementar_contador():  # Função interna
+    def incrementar_contador():  
         nonlocal contador
         contador += 1
         return contador
     
-    return incrementar_contador  # Retorna função que mantém estado
+    return incrementar_contador  
 ```
 
 ### 4. Função de Alta Ordem 
@@ -76,7 +76,7 @@ def criar_contador_emprestimos(self) -> Callable[[], int]:
 ```python
 def aplicar_desconto_livros(self, livros: List[Dict[str, Any]], 
                            funcao_desconto: Callable[[Dict[str, Any]], Dict[str, Any]]) -> List[Dict[str, Any]]:
-    # Recebe função como parâmetro e aplica a todos os livros
+   
     return list(map(funcao_desconto, livros))
 ```
 
@@ -176,6 +176,9 @@ O sistema inclui uma opção especial (menu item 6) que demonstra todos os conce
 - **Testes Unitários (unittest)**
 - **JSON para persistência**
 - **Type Hints para documentação**
+
+## USO DE IA 
+CLOUND para auxilio e formatação de documentação.
 
 ## 📝 Licença
 
