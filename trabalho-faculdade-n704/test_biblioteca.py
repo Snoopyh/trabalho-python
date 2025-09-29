@@ -1,7 +1,5 @@
-"""
-Testes para o Sistema de Gerenciamento de Biblioteca Pessoal
-Demonstra casos de teste abrangentes para todas as funcionalidades
-"""
+"Testes para o Sistema de Gerenciamento de Biblioteca Pessoal"
+"Demonstra casos de teste abrangentes para todas as funcionalidades"
 
 import unittest
 from datetime import datetime, timedelta
@@ -9,7 +7,7 @@ from biblioteca import Biblioteca, criar_funcao_desconto, processar_livros_funci
 
 
 class TestBiblioteca(unittest.TestCase):
-    """Classe de testes para o sistema de biblioteca"""
+   "Classe de testes para o sistema de biblioteca"
     
     def setUp(self):
         """Configuração inicial para cada teste"""
@@ -30,7 +28,7 @@ class TestBiblioteca(unittest.TestCase):
         )
     
     def test_cadastrar_livro(self):
-        """Testa o cadastro de livros"""
+      "Testa o cadastro de livros"
         print("\n🧪 Testando cadastro de livros...")
         
        
@@ -46,7 +44,7 @@ class TestBiblioteca(unittest.TestCase):
         print("✅ Cadastro de livros funcionando corretamente")
     
     def test_buscar_livros_por_titulo(self):
-        """Testa busca de livros por título"""
+        "Testa busca de livros por título"
         print("\n🧪 Testando busca por título...")
         
        
@@ -61,7 +59,7 @@ class TestBiblioteca(unittest.TestCase):
         print("✅ Busca por título funcionando corretamente")
     
     def test_buscar_livros_por_autor(self):
-        """Testa busca de livros por autor"""
+       "Testa busca de livros por autor"
         print("\n🧪 Testando busca por autor...")
         
     
@@ -72,17 +70,17 @@ class TestBiblioteca(unittest.TestCase):
         print("✅ Busca por autor funcionando corretamente")
     
     def test_buscar_livros_por_categoria(self):
-        """Testa busca de livros por categoria"""
+       "Testa busca de livros por categoria"
         print("\n🧪 Testando busca por categoria...")
         
         
         livros = self.biblioteca.buscar_livros("categoria", "Ficção Científica")
-        self.assertEqual(len(livros), 2)  # 1984 e Duna
+        self.assertEqual(len(livros), 2)  
         
         print("✅ Busca por categoria funcionando corretamente")
     
     def test_emprestar_livro(self):
-        """Testa empréstimo de livros"""
+      "Testa empréstimo de livros"
         print("\n🧪 Testando empréstimo de livros...")
         
         
@@ -103,7 +101,7 @@ class TestBiblioteca(unittest.TestCase):
         print("✅ Empréstimo de livros funcionando corretamente")
     
     def test_devolver_livro(self):
-        """Testa devolução de livros"""
+      "Testa devolução de livros"
         print("\n🧪 Testando devolução de livros...")
         
       
@@ -126,7 +124,7 @@ class TestBiblioteca(unittest.TestCase):
         print("✅ Devolução de livros funcionando corretamente")
     
     def test_gerar_relatorio(self):
-        """Testa geração de relatório"""
+        "Testa geração de relatório"
         print("\n🧪 Testando geração de relatório...")
         
       
@@ -148,7 +146,7 @@ class TestBiblioteca(unittest.TestCase):
         print("✅ Geração de relatório funcionando corretamente")
     
     def test_funcao_lambda(self):
-        """Testa uso de função lambda"""
+        "Testa uso de função lambda"
         print("\n🧪 Testando função lambda...")
         
        
@@ -162,7 +160,7 @@ class TestBiblioteca(unittest.TestCase):
         print("✅ Função lambda funcionando corretamente")
     
     def test_list_comprehension(self):
-        """Testa uso de list comprehension"""
+        "Testa uso de list comprehension"
         print("\n🧪 Testando list comprehension...")
         
      
@@ -177,7 +175,7 @@ class TestBiblioteca(unittest.TestCase):
         print("✅ List comprehension funcionando corretamente")
     
     def test_closure(self):
-        """Testa uso de closure"""
+        "Testa uso de closure"
         print("\n🧪 Testando closure...")
         
         
@@ -190,12 +188,12 @@ class TestBiblioteca(unittest.TestCase):
         
      
         contador2 = self.biblioteca.criar_contador_emprestimos()
-        self.assertEqual(contador2(), 1)  # Deve começar do 1
+        self.assertEqual(contador2(), 1) 
         
         print("✅ Closure funcionando corretamente")
     
     def test_funcao_alta_ordem(self):
-        """Testa uso de função de alta ordem"""
+        "Testa uso de função de alta ordem"
         print("\n🧪 Testando função de alta ordem...")
         
       
@@ -220,7 +218,7 @@ class TestBiblioteca(unittest.TestCase):
         print("✅ Função de alta ordem funcionando corretamente")
     
     def test_processamento_funcional(self):
-        """Testa processamento funcional"""
+        "Testa processamento funcional"
         print("\n🧪 Testando processamento funcional...")
         
         
@@ -242,7 +240,7 @@ class TestBiblioteca(unittest.TestCase):
         print("✅ Processamento funcional funcionando corretamente")
     
     def test_estatisticas_funcionais(self):
-        """Testa cálculo de estatísticas usando programação funcional"""
+        "Testa cálculo de estatísticas "
         print("\n🧪 Testando estatísticas funcionais...")
         
         stats = calcular_estatisticas_livros(self.biblioteca.livros)
@@ -263,7 +261,7 @@ class TestBiblioteca(unittest.TestCase):
         print("✅ Estatísticas funcionais funcionando corretamente")
     
     def test_casos_limite(self):
-        """Testa casos limite e tratamento de erros"""
+        "Testa casos limite e tratamento de erros"
         print("\n🧪 Testando casos limite...")
         
        
@@ -282,7 +280,7 @@ class TestBiblioteca(unittest.TestCase):
 
 
 def executar_todos_os_testes():
-    """Executa todos os testes e exibe resultados"""
+    "Executa todos os testes e exibe resultados"
     print("="*60)
     print("    EXECUTANDO TESTES DO SISTEMA DE BIBLIOTECA")
     print("="*60)
