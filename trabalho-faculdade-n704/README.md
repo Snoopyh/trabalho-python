@@ -43,7 +43,7 @@ Este projeto implementa um sistema de gerenciamento de biblioteca pessoal utiliz
 
 ## 🛠️ Conceitos de Programação Funcional Implementados
 
-### 1. Função Lambda (0.4 pts)
+### 1. Função Lambda 
 **Localização**: `biblioteca.py` - método `filtrar_livros_por_categoria()`
 ```python
 # Filtra livros por categoria usando lambda
