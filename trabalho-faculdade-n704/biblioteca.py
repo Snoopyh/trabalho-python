@@ -55,7 +55,7 @@ class Biblioteca:
         Returns:
             Lista de livros que atendem ao critério
         """
-        # Função lambda para filtrar livros por critério
+        
         filtro_lambda = lambda livro: valor.lower() in livro[criterio].lower()
         
         return list(filter(filtro_lambda, self.livros))
@@ -70,7 +70,7 @@ class Biblioteca:
         Returns:
             Lista de livros da categoria especificada
         """
-        # CONCEITO FUNCIONAL: Função Lambda
+        
         return list(filter(lambda livro: livro['categoria'] == categoria, self.livros))
     
     def obter_titulos_livros(self, livros: List[Dict[str, Any]]) -> List[str]:
@@ -83,7 +83,7 @@ class Biblioteca:
         Returns:
             Lista de títulos dos livros
         """
-        # CONCEITO FUNCIONAL: List Comprehension
+       
         return [livro['titulo'] for livro in livros]
     
     def criar_contador_emprestimos(self) -> Callable[[], int]:
@@ -93,7 +93,7 @@ class Biblioteca:
         Returns:
             Função que retorna o número de empréstimos
         """
-        # CONCEITO FUNCIONAL: Closure
+        
         contador = 0
         
         def incrementar_contador():
@@ -115,7 +115,7 @@ class Biblioteca:
         Returns:
             Lista de livros com desconto aplicado
         """
-        # CONCEITO FUNCIONAL: Função de Alta Ordem
+       
         return list(map(funcao_desconto, livros))
     
     def emprestar_livro(self, livro_id: int, pessoa: str) -> Dict[str, Any]:
@@ -169,7 +169,7 @@ class Biblioteca:
         if emprestimo['devolvido']:
             raise ValueError("Livro já foi devolvido")
         
-        # Calcula multa se houver atraso
+       
         data_vencimento = datetime.fromisoformat(emprestimo['data_vencimento'])
         data_devolucao = datetime.now()
         
@@ -182,7 +182,7 @@ class Biblioteca:
         emprestimo['data_devolucao'] = data_devolucao.isoformat()
         emprestimo['multa'] = multa
         
-        # Marca livro como disponível
+        
         livro = next((l for l in self.livros if l['id'] == emprestimo['livro_id']), None)
         if livro:
             livro['disponivel'] = True
@@ -200,7 +200,7 @@ class Biblioteca:
         livros_disponiveis = len([l for l in self.livros if l['disponivel']])
         livros_emprestados = total_livros - livros_disponiveis
         
-        # Agrupa livros por categoria usando list comprehension
+       
         livros_por_categoria = {}
         for livro in self.livros:
             categoria = livro['categoria']
@@ -208,7 +208,7 @@ class Biblioteca:
                 livros_por_categoria[categoria] = []
             livros_por_categoria[categoria].append(livro['titulo'])
         
-        # Empréstimos em atraso
+      
         emprestimos_em_atraso = []
         for emprestimo in self.emprestimos:
             if not emprestimo['devolvido']:
@@ -259,7 +259,7 @@ class Biblioteca:
             print("Arquivo não encontrado. Iniciando biblioteca vazia.")
 
 
-# Funções auxiliares que demonstram conceitos funcionais
+
 
 def criar_funcao_desconto(percentual: float) -> Callable[[Dict[str, Any]], Dict[str, Any]]:
     """
@@ -310,10 +310,10 @@ def calcular_estatisticas_livros(livros: List[Dict[str, Any]]) -> Dict[str, Any]
     if not livros:
         return {'total': 0, 'media_ano': 0, 'categorias_unicas': 0}
     
-    # List comprehension para extrair anos
+  
     anos = [livro['ano'] for livro in livros]
     
-    # List comprehension para extrair categorias únicas
+  
     categorias_unicas = len(set(livro['categoria'] for livro in livros))
     
     return {

@@ -1,10 +1,11 @@
 # Documento de Requisitos - Sistema de Gerenciamento de Biblioteca Pessoal
 
 ## Informações da Equipe
-- **Integrante 1:** [Nome Completo] - [Matrícula] - **Papel:** Desenvolvedor Backend
-- **Integrante 2:** [Nome Completo] - [Matrícula] - **Papel:** Desenvolvedor Frontend/Interface
-- **Integrante 3:** [Nome Completo] - [Matrícula] - **Papel:** Testador
-- **Integrante 4:** [Nome Completo] - [Matrícula] - **Papel:** Documentador/Arquiteto
+- **Integrante 1:** DAYANE DO NASCIMENTO PAULINO - 2326944- **Papel:** Documentador/Arquiteto
+- **Integrante 2:** ISMAEL GUSTAVO DA SILVA - 2326204 - **Papel:** Desenvolvedor Backend
+- **Integrante 3:** PAULO JONATHAN RIBEIRO LUZ - 2323859 - **Papel:** Tester
+- **Integrante 4:** STAYNER RODRIGUES DE LIMA - 2326190 - **Papel:** Tester
+- **Integrante 5:** MATHEUS FERREIRA SILVA ROCHA - 2326202 - **Papel:** Desenvolvedor Interface
 
 ## Requisitos Funcionais
 

@@ -157,14 +157,14 @@ def demonstrar_conceitos_funcionais(biblioteca: Biblioteca):
         print("Cadastre alguns livros primeiro para ver a demonstração!")
         return
     
-    # 1. Demonstração de List Comprehension
+
     print("\n1️⃣ LIST COMPREHENSION:")
     print("Extraindo títulos de todos os livros:")
     titulos = biblioteca.obter_titulos_livros(biblioteca.livros)
     for i, titulo in enumerate(titulos, 1):
         print(f"  {i}. {titulo}")
     
-    # 2. Demonstração de Lambda
+  
     print("\n2️⃣ FUNÇÃO LAMBDA:")
     print("Filtrando livros por categoria 'Ficção':")
     livros_ficcao = biblioteca.filtrar_livros_por_categoria('Ficção')
@@ -174,7 +174,7 @@ def demonstrar_conceitos_funcionais(biblioteca: Biblioteca):
     else:
         print("  Nenhum livro de ficção encontrado")
     
-    # 3. Demonstração de Closure
+
     print("\n3️⃣ CLOSURE:")
     print("Criando contador de empréstimos:")
     contador = biblioteca.criar_contador_emprestimos()
@@ -182,18 +182,18 @@ def demonstrar_conceitos_funcionais(biblioteca: Biblioteca):
     print(f"  Empréstimo #{contador()}")
     print(f"  Empréstimo #{contador()}")
     
-    # 4. Demonstração de Função de Alta Ordem
+
     print("\n4️⃣ FUNÇÃO DE ALTA ORDEM:")
     print("Aplicando desconto de 20% aos livros:")
     
-    # Cria função de desconto usando closure
+   
     funcao_desconto = criar_funcao_desconto(0.2)
     
-    # Adiciona preço fictício aos livros para demonstração
+
     livros_com_preco = []
-    for livro in biblioteca.livros[:3]:  # Pega apenas os 3 primeiros
+    for livro in biblioteca.livros[:3]:  
         livro_com_preco = livro.copy()
-        livro_com_preco['preco'] = 50.0  # Preço fictício
+        livro_com_preco['preco'] = 50.0  
         livros_com_preco.append(livro_com_preco)
     
     livros_com_desconto = biblioteca.aplicar_desconto_livros(livros_com_preco, funcao_desconto)
@@ -201,14 +201,14 @@ def demonstrar_conceitos_funcionais(biblioteca: Biblioteca):
     for livro in livros_com_desconto:
         print(f"  {livro['titulo']}: R$ {livro['preco']:.2f}")
     
-    # 5. Demonstração de processamento funcional
+    
     print("\n5️⃣ PROCESSAMENTO FUNCIONAL:")
     print("Livros publicados após 2000:")
     
-    # Filtro para livros após 2000
+   
     filtro_ano = lambda livro: livro['ano'] > 2000
     
-    # Transformação para mostrar título e ano
+    
     transformacao = lambda livro: f"{livro['titulo']} ({livro['ano']})"
     
     livros_filtrados = processar_livros_funcional(biblioteca.livros, filtro_ano, transformacao)
@@ -219,7 +219,7 @@ def demonstrar_conceitos_funcionais(biblioteca: Biblioteca):
     else:
         print("  Nenhum livro encontrado")
     
-    # 6. Demonstração de estatísticas funcionais
+   
     print("\n6️⃣ ESTATÍSTICAS FUNCIONAIS:")
     stats = calcular_estatisticas_livros(biblioteca.livros)
     print(f"  Total de livros: {stats['total']}")
@@ -236,7 +236,7 @@ def main():
     
     biblioteca = Biblioteca()
     
-    # Tenta carregar dados existentes
+   
     biblioteca.carregar_dados()
     
     while True:

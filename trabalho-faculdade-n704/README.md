@@ -1,5 +1,23 @@
 # Sistema de Gerenciamento de Biblioteca Pessoal
 
+## Informações da Equipe
+- **Integrante 1:** DAYANE DO NASCIMENTO PAULINO - 2326944- **Papel:** Documentador/Arquiteto
+- **Integrante 2:** ISMAEL GUSTAVO DA SILVA - 2326204 - **Papel:** Desenvolvedor Backend
+- **Integrante 3:** PAULO JONATHAN RIBEIRO LUZ - 2323859 - **Papel:** Tester
+- **Integrante 4:** STAYNER RODRIGUES DE LIMA - 2326190 - **Papel:** Tester
+- **Integrante 5:** MATHEUS FERREIRA SILVA ROCHA - 2326202 - **Papel:** Desenvolvedor Interface
+
+### Capa do Documento (Adicionar no início do documento_requisitos.md)
+```
+UNIVERSIDADE UNIFOR
+CURSO: ANALISE E DESENVOLVIMENTO DE SISTEMAS
+DISCIPLINA: N704-Programação funcional
+PROFESSOR: Bruno Lopes Alcantara
+
+SISTEMA DE GERENCIAMENTO DE BIBLIOTECA PESSOAL
+IMPLEMENTAÇÃO DE CONCEITOS DE PROGRAMAÇÃO FUNCIONAL
+
+
 ## 📚 Sobre o Projeto
 
 Este projeto implementa um sistema de gerenciamento de biblioteca pessoal utilizando **conceitos de programação funcional** em Python. O sistema demonstra o uso de:
@@ -150,27 +168,6 @@ O sistema inclui uma opção especial (menu item 6) que demonstra todos os conce
 - **Testador**: Criação e execução de casos de teste
 - **Documentador/Arquiteto**: Documentação e arquitetura do sistema
 
-## 🤖 Uso de IA
-
-Este projeto foi desenvolvido com auxílio do **Claude (Anthropic)** para:
-- Estruturação do projeto e arquitetura
-- Implementação dos conceitos de programação funcional
-- Criação de casos de teste abrangentes
-- Documentação técnica detalhada
-
-## 📈 Critérios de Avaliação
-
-- ✅ **Definição de papéis** (0.4 pts)
-- ✅ **Documento de requisitos** (1.0 pt)
-- ✅ **Execução sem erros** (1.0 pt)
-- ✅ **Casos de teste** (1.0 pt)
-- ✅ **Conceitos funcionais** (1.6 pts)
-  - ✅ Função lambda (0.4)
-  - ✅ List comprehension (0.4)
-  - ✅ Closure (0.4)
-  - ✅ Função de alta ordem (0.4)
-
-**Total: 5.0 pontos**
 
 ## 🔧 Tecnologias Utilizadas
 

@@ -15,7 +15,7 @@ class TestBiblioteca(unittest.TestCase):
         """Configuração inicial para cada teste"""
         self.biblioteca = Biblioteca()
         
-        # Adiciona alguns livros de teste
+        
         self.livro1 = self.biblioteca.cadastrar_livro(
             "O Senhor dos Anéis", "J.R.R. Tolkien", 1954, "Fantasia"
         )
@@ -33,14 +33,14 @@ class TestBiblioteca(unittest.TestCase):
         """Testa o cadastro de livros"""
         print("\n🧪 Testando cadastro de livros...")
         
-        # Verifica se o livro foi cadastrado corretamente
+       
         self.assertEqual(self.livro1['titulo'], "O Senhor dos Anéis")
         self.assertEqual(self.livro1['autor'], "J.R.R. Tolkien")
         self.assertEqual(self.livro1['ano'], 1954)
         self.assertEqual(self.livro1['categoria'], "Fantasia")
         self.assertTrue(self.livro1['disponivel'])
         
-        # Verifica se o ID foi atribuído
+        
         self.assertIsNotNone(self.livro1['id'])
         
         print("✅ Cadastro de livros funcionando corretamente")
@@ -49,12 +49,12 @@ class TestBiblioteca(unittest.TestCase):
         """Testa busca de livros por título"""
         print("\n🧪 Testando busca por título...")
         
-        # Busca por título parcial
+       
         livros = self.biblioteca.buscar_livros("titulo", "Senhor")
         self.assertEqual(len(livros), 1)
         self.assertEqual(livros[0]['titulo'], "O Senhor dos Anéis")
         
-        # Busca por título que não existe
+        
         livros = self.biblioteca.buscar_livros("titulo", "Harry Potter")
         self.assertEqual(len(livros), 0)
         
@@ -64,7 +64,7 @@ class TestBiblioteca(unittest.TestCase):
         """Testa busca de livros por autor"""
         print("\n🧪 Testando busca por autor...")
         
-        # Busca por autor
+    
         livros = self.biblioteca.buscar_livros("autor", "Tolkien")
         self.assertEqual(len(livros), 1)
         self.assertEqual(livros[0]['autor'], "J.R.R. Tolkien")
@@ -75,7 +75,7 @@ class TestBiblioteca(unittest.TestCase):
         """Testa busca de livros por categoria"""
         print("\n🧪 Testando busca por categoria...")
         
-        # Busca por categoria
+        
         livros = self.biblioteca.buscar_livros("categoria", "Ficção Científica")
         self.assertEqual(len(livros), 2)  # 1984 e Duna
         
@@ -85,18 +85,18 @@ class TestBiblioteca(unittest.TestCase):
         """Testa empréstimo de livros"""
         print("\n🧪 Testando empréstimo de livros...")
         
-        # Empréstimo válido
+        
         emprestimo = self.biblioteca.emprestar_livro(self.livro1['id'], "João Silva")
         
         self.assertEqual(emprestimo['livro_id'], self.livro1['id'])
         self.assertEqual(emprestimo['pessoa'], "João Silva")
         self.assertFalse(emprestimo['devolvido'])
         
-        # Verifica se o livro foi marcado como indisponível
+        
         livro = next(l for l in self.biblioteca.livros if l['id'] == self.livro1['id'])
         self.assertFalse(livro['disponivel'])
         
-        # Tenta emprestar livro já emprestado
+       
         with self.assertRaises(ValueError):
             self.biblioteca.emprestar_livro(self.livro1['id'], "Maria Santos")
         
@@ -106,20 +106,20 @@ class TestBiblioteca(unittest.TestCase):
         """Testa devolução de livros"""
         print("\n🧪 Testando devolução de livros...")
         
-        # Empresta um livro primeiro
+      
         emprestimo = self.biblioteca.emprestar_livro(self.livro2['id'], "Ana Costa")
         
-        # Devolve o livro
+      
         devolucao = self.biblioteca.devolver_livro(emprestimo['id'])
         
         self.assertTrue(devolucao['devolvido'])
         self.assertIn('data_devolucao', devolucao)
         
-        # Verifica se o livro foi marcado como disponível
+        
         livro = next(l for l in self.biblioteca.livros if l['id'] == self.livro2['id'])
         self.assertTrue(livro['disponivel'])
         
-        # Tenta devolver livro já devolvido
+      
         with self.assertRaises(ValueError):
             self.biblioteca.devolver_livro(emprestimo['id'])
         
@@ -129,18 +129,18 @@ class TestBiblioteca(unittest.TestCase):
         """Testa geração de relatório"""
         print("\n🧪 Testando geração de relatório...")
         
-        # Empresta um livro para ter dados no relatório
+      
         self.biblioteca.emprestar_livro(self.livro1['id'], "Pedro Santos")
         
         relatorio = self.biblioteca.gerar_relatorio()
         
-        # Verifica campos obrigatórios
+       
         self.assertIn('total_livros', relatorio)
         self.assertIn('livros_disponiveis', relatorio)
         self.assertIn('livros_emprestados', relatorio)
         self.assertIn('livros_por_categoria', relatorio)
         
-        # Verifica valores
+        
         self.assertEqual(relatorio['total_livros'], 4)
         self.assertEqual(relatorio['livros_disponiveis'], 3)
         self.assertEqual(relatorio['livros_emprestados'], 1)
@@ -151,11 +151,11 @@ class TestBiblioteca(unittest.TestCase):
         """Testa uso de função lambda"""
         print("\n🧪 Testando função lambda...")
         
-        # Testa filtro por categoria usando lambda
+       
         livros_ficcao = self.biblioteca.filtrar_livros_por_categoria("Ficção Científica")
         self.assertEqual(len(livros_ficcao), 2)
         
-        # Verifica se todos os livros retornados são da categoria correta
+        
         for livro in livros_ficcao:
             self.assertEqual(livro['categoria'], "Ficção Científica")
         
@@ -165,7 +165,7 @@ class TestBiblioteca(unittest.TestCase):
         """Testa uso de list comprehension"""
         print("\n🧪 Testando list comprehension...")
         
-        # Testa extração de títulos usando list comprehension
+     
         titulos = self.biblioteca.obter_titulos_livros(self.biblioteca.livros)
         
         self.assertEqual(len(titulos), 4)
@@ -180,15 +180,15 @@ class TestBiblioteca(unittest.TestCase):
         """Testa uso de closure"""
         print("\n🧪 Testando closure...")
         
-        # Testa contador de empréstimos usando closure
+        
         contador = self.biblioteca.criar_contador_emprestimos()
         
-        # Verifica se o contador mantém estado
+        
         self.assertEqual(contador(), 1)
         self.assertEqual(contador(), 2)
         self.assertEqual(contador(), 3)
         
-        # Cria outro contador independente
+     
         contador2 = self.biblioteca.criar_contador_emprestimos()
         self.assertEqual(contador2(), 1)  # Deve começar do 1
         
@@ -198,24 +198,24 @@ class TestBiblioteca(unittest.TestCase):
         """Testa uso de função de alta ordem"""
         print("\n🧪 Testando função de alta ordem...")
         
-        # Cria função de desconto
-        funcao_desconto = criar_funcao_desconto(0.1)  # 10% de desconto
+      
+        funcao_desconto = criar_funcao_desconto(0.1) 
         
-        # Adiciona preço aos livros para teste
+        
         livros_com_preco = []
         for livro in self.biblioteca.livros[:2]:
             livro_com_preco = livro.copy()
             livro_com_preco['preco'] = 100.0
             livros_com_preco.append(livro_com_preco)
         
-        # Aplica desconto usando função de alta ordem
+     
         livros_com_desconto = self.biblioteca.aplicar_desconto_livros(
             livros_com_preco, funcao_desconto
         )
         
-        # Verifica se o desconto foi aplicado
+        
         for livro in livros_com_desconto:
-            self.assertEqual(livro['preco'], 90.0)  # 100 - 10%
+            self.assertEqual(livro['preco'], 90.0)  
         
         print("✅ Função de alta ordem funcionando corretamente")
     
@@ -223,19 +223,19 @@ class TestBiblioteca(unittest.TestCase):
         """Testa processamento funcional"""
         print("\n🧪 Testando processamento funcional...")
         
-        # Filtro para livros após 1950
+        
         filtro_ano = lambda livro: livro['ano'] > 1950
         
-        # Transformação para extrair título e ano
+        
         transformacao = lambda livro: f"{livro['titulo']} ({livro['ano']})"
         
-        # Processa livros usando programação funcional
+       
         resultado = processar_livros_funcional(
             self.biblioteca.livros, filtro_ano, transformacao
         )
         
-        # Verifica resultado
-        self.assertEqual(len(resultado), 2)  # Duna (1965) e O Senhor dos Anéis (1954)
+        
+        self.assertEqual(len(resultado), 2)  
         self.assertIn("Duna (1965)", resultado)
         self.assertIn("O Senhor dos Anéis (1954)", resultado)
         
@@ -247,7 +247,7 @@ class TestBiblioteca(unittest.TestCase):
         
         stats = calcular_estatisticas_livros(self.biblioteca.livros)
         
-        # Verifica campos obrigatórios
+        
         self.assertIn('total', stats)
         self.assertIn('media_ano', stats)
         self.assertIn('categorias_unicas', stats)
@@ -256,9 +256,9 @@ class TestBiblioteca(unittest.TestCase):
         
         # Verifica valores
         self.assertEqual(stats['total'], 4)
-        self.assertEqual(stats['categorias_unicas'], 3)  # Fantasia, Ficção Científica, Literatura Brasileira
-        self.assertEqual(stats['ano_mais_antigo'], 1899)  # Dom Casmurro
-        self.assertEqual(stats['ano_mais_recente'], 1965)  # Duna
+        self.assertEqual(stats['categorias_unicas'], 3)  
+        self.assertEqual(stats['ano_mais_antigo'], 1899)  
+        self.assertEqual(stats['ano_mais_recente'], 1965) 
         
         print("✅ Estatísticas funcionais funcionando corretamente")
     
@@ -266,17 +266,17 @@ class TestBiblioteca(unittest.TestCase):
         """Testa casos limite e tratamento de erros"""
         print("\n🧪 Testando casos limite...")
         
-        # Tenta emprestar livro inexistente
+       
         with self.assertRaises(ValueError):
             self.biblioteca.emprestar_livro(999, "João")
         
-        # Tenta devolver empréstimo inexistente
+        
         with self.assertRaises(ValueError):
             self.biblioteca.devolver_livro(999)
         
-        # Busca com string vazia
+        
         livros = self.biblioteca.buscar_livros("titulo", "")
-        self.assertEqual(len(livros), 4)  # Deve retornar todos os livros
+        self.assertEqual(len(livros), 4)  
         
         print("✅ Casos limite funcionando corretamente")
 
@@ -287,14 +287,14 @@ def executar_todos_os_testes():
     print("    EXECUTANDO TESTES DO SISTEMA DE BIBLIOTECA")
     print("="*60)
     
-    # Cria suite de testes
+   
     suite = unittest.TestLoader().loadTestsFromTestCase(TestBiblioteca)
     
-    # Executa testes
+    
     runner = unittest.TextTestRunner(verbosity=0)
     resultado = runner.run(suite)
     
-    # Exibe resumo
+    
     print("\n" + "="*60)
     print("    RESUMO DOS TESTES")
     print("="*60)
